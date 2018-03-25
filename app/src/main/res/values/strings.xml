@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">GhureDekhi</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_package_details">PackageDetails</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_current_location">Current Location</string>
+    <string name="action_custom_location">Custom Location</string>
+    <string name="action_select_state">Select State</string>
+</resources>
