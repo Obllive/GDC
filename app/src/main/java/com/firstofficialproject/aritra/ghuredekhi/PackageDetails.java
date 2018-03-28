@@ -1,100 +1,84 @@
 package com.firstofficialproject.aritra.ghuredekhi;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
+import android.support.v7.widget.AppCompatButton;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.PopupMenu;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class PackageDetails extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+import java.util.ArrayList;
+import java.util.List;
 
+public class PackageDetails extends AppCompatActivity implements View.OnClickListener
+{
+    ImageView menu_button,location_input_pin;
+    TextView ghure_dekhi_title_text;
+    private RecyclerView recyclerView;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.package_details);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        menu_button = (ImageView)findViewById(R.id.menu_button);
+        menu_button.setOnClickListener(this);
+        location_input_pin = (ImageView)findViewById(R.id.location_input_pin);
+        location_input_pin.setOnClickListener(this);
+        ghure_dekhi_title_text = (TextView)findViewById(R.id.Ghure_Dekhi_title_text);
+        Typeface T1 = Typeface.createFromAsset(getAssets(), "fonts/Papaya_Sunrise.otf");
+        ghure_dekhi_title_text.setTypeface(T1);
+        initialization();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
     }
-
     @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
+    public void onClick(View v)
+    {
+        switch(v.getId())
+        {
+            case R.id.location_input_pin:
+                PopupMenu location_pop_up = new PopupMenu(PackageDetails.this,location_input_pin);
+                location_pop_up.getMenuInflater().inflate(R.menu.location_pop_up_menu,location_pop_up.getMenu());
+                location_pop_up.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        Intent i = new Intent(PackageDetails.this,LoginSignupPage.class);
+                        startActivity(i);
+                        finish();
+                        return true;
+                    }
+                });
+                location_pop_up.show();
+                break;
         }
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.package_details, menu);
-        return true;
+    private void initialization() {
+        recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(new SubjectAdapter(generateData()));
     }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_current_location || id == R.id.action_custom_location || id == R.id.action_select_states) {
-            return true;
+    private List<Subject> generateData(){
+        List<Subject> subjectList = new ArrayList<>();
+        String names_of_packages[] = {"Bangkok","Malaysia","Australia","Nepal","Ladakh","Darjeeling"};
+        String prices_of_packages[] = {"Rs.3500","Rs.7800","Rs.5600","Rs.4500","Rs.3500","Rs.3200"};
+        for(int index = 0; index < 6; index++){
+            Subject subject = new Subject();
+            subject.setName_of_destination(names_of_packages[index]);
+            subject.setPrice_of_package(prices_of_packages[index]);
+            subjectList.add(subject);
         }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
+        return subjectList;
     }
 }
+

@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/current_location"
+        android:title="@string/action_current_location"/>
+    <item
+        android:id="@+id/custom_location"
+        android:title="@string/action_custom_location"/>
+    <item
+        android:id="@+id/select_states"
+        android:title="@string/action_select_state"/>
+</menu>

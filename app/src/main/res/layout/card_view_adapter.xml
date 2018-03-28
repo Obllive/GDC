@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:gravity="bottom"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="5sp"
+            android:background="@drawable/bangkok"
+            android:layout_weight="0.6"
+            android:orientation="vertical"
+            android:elevation="4sp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:background="@drawable/transparent_background"
+                android:text="NEW"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="10sp"
+                android:textColor="@android:color/white"
+                android:fontFamily="sans-serif"
+                android:layout_weight="0.3"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.7"
+                android:layout_gravity="end"
+                android:layout_margin="10sp"
+                android:background="@drawable/passenger_completion_layout_background"
+                android:drawableLeft="@android:drawable/ic_lock_lock"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:elevation="2dp"
+
+            android:layout_margin="5dp">
+            <TextView
+                android:id="@+id/name_of_destination"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:text="Bangkok"
+                android:layout_margin="10sp"
+                android:layout_weight="0.7"
+                android:layout_gravity="center_vertical"/>
+            <android.support.v7.widget.AppCompatButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="5sp"
+                android:layout_gravity="center_vertical"
+                android:text="BOOK"
+                android:textSize="11sp"
+                android:elevation="4sp"
+                android:textColor="@android:color/white"
+                android:layout_weight="0.3"
+                android:background="@drawable/passenger_completion_layout_background"
+                android:layout_margin="8sp"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2sp"
+            android:background="@android:color/darker_gray"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:padding="10sp">
+            <TextView
+                android:id="@+id/price_of_package"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Rs. 3500"
+                android:textStyle="bold"
+                android:layout_marginStart="10sp"
+                android:layout_weight="0.2"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="sans-serif"
+                android:textSize="15sp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="PLAN IT"
+                android:layout_weight="0.6"
+                android:layout_gravity="center_vertical"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif"
+                android:gravity="end"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/plan_it_image"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>
+
+
+

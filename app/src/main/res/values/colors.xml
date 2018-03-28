@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-
+    <color name="colorPrimary">#54173c</color>
+    <color name="colorPrimaryDark">#691e4b</color>
+    <color name="colorAccent">#ca5a13</color>
+    <color name="Transparent">#59000000</color>
     <color name="black_overlay">#66000000</color>
+    <color name="Plum_Transparent">#d454173c</color>
+    <color name="Offwhite">#d4d2cdce</color>
 </resources>
