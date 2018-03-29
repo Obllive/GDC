@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.firstofficialproject.aritra.ghuredekhi.SignUpInput">
+
+   <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="180sp"
+    android:background="@color/colorPrimaryDark"
+    android:elevation="10sp"
+    android:orientation="vertical"
+    android:padding="10sp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4"
+        android:padding="10sp"
+        android:weightSum="10">
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/gdc_logo" />
+        <TextView
+            android:id="@+id/Ghure_Dekhi_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight="8.5"
+            android:text="@string/ghure_dekhi_title_text"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"/>
+        <ImageView
+            android:id="@+id/close_button_action_bar"
+            android:layout_width="40dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.5"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/close_button_action_bar"/>
+    </LinearLayout>
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           android:layout_weight="0.6"
+           android:padding="10sp">
+           <TextView
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center_vertical"
+               android:layout_weight="0.55"
+               android:fontFamily="sans-serif"
+               android:text="Your number is safe with us."
+               android:textColor="@android:color/white"
+               android:textSize="15dp" />
+           <ImageView
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center_vertical"
+               android:layout_weight="0.25"
+               android:src="@drawable/sign_up_page_image" />
+       </LinearLayout>
+   </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="30sp">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Mobile Number"
+                    android:inputType="phone"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/sign_up_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40sp"
+                android:background="@android:color/holo_orange_dark"
+                android:elevation="0sp"
+                android:fontFamily="sans-serif"
+                android:text="SIGN UP"
+                android:textColor="@android:color/white" />
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/existing_user_sign_in_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                android:background="@android:color/white"
+                android:elevation="4sp"
+                android:fontFamily="sans-serif"
+                android:text="Existing User? SIGN IN"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

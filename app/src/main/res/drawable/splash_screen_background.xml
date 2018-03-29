@@ -3,12 +3,12 @@
 
     <item
         android:drawable="@color/colorPrimary"
-        android:gravity="fill"></item>
+        android:gravity="fill"/>
 
     <item
         android:width="40sp"
         android:height="40sp"
         android:drawable="@drawable/gdc_logo"
-        android:gravity="center"></item>
+        android:gravity="center"/>
 
 </layer-list>

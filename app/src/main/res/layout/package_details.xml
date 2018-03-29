@@ -43,10 +43,19 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"
-                android:layout_weight="8"
+                android:layout_weight="7"
                 android:text="@string/ghure_dekhi_title_text"
                 android:textColor="@android:color/white"
                 android:textSize="20sp" />
+            <ImageView
+                android:id="@+id/profile_navigation_pin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/profile_navigation_pin" />
 
             <ImageView
                 android:id="@+id/location_input_pin"
@@ -56,7 +65,7 @@
                 android:layout_weight="1"
                 android:clickable="true"
                 android:focusable="true"
-                android:src="@drawable/location_pin_input" />
+                android:src="@drawable/location_input_pin" />
         </LinearLayout>
 
         <EditText

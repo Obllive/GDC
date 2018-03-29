@@ -7,4 +7,9 @@
     <string name="ghure_dekhi_title_text">Ghure Dekhi</string>
     <string name="login_page_title_text">Login To Ghure Dekhi</string>
     <string name="search_box_input">Select Destination or State</string>
+    <string name="SignUp_SignIn_Page_Description">Sign in to access Packages, Reviews and Rate, Customize tour preferences.</string>
+    <string name="Email_MobileNo_Input_For_SignIn">Email / Mobile Number</string>
+    <string name="Password_Input_For_SignIn">Password</string>
+    <string name="SignIn_Button_Text">SIGN IN</string>
+    <string name="New_User_SignUp_Button_Text">New User? SIGNUP</string>
 </resources>

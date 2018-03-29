@@ -41,8 +41,8 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
         TextView textPrice_of_package;
         public SubjectViewHolder(View itemView) {
             super(itemView);
-            textName_of_destination = (TextView) itemView.findViewById(R.id.name_of_destination);
-            textPrice_of_package = (TextView) itemView.findViewById(R.id.price_of_package);
+            textName_of_destination =  itemView.findViewById(R.id.name_of_destination);
+            textPrice_of_package = itemView.findViewById(R.id.price_of_package);
         }
     }
 }

@@ -9,44 +9,50 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class LoginSignupPage extends AppCompatActivity implements View.OnClickListener {
-    ImageView close_button_action_bar;
+public class SignUpInput extends AppCompatActivity implements View.OnClickListener {
     TextView ghure_dekhi_title_text;
-    AppCompatButton new_user_sign_up_button;
-    Intent i,j;
+    ImageView close_button_action_bar;
+    AppCompatButton existing_user_sign_in_button, sign_up_button;
+    Intent i, j, k;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_signup_page);
+        setContentView(R.layout.sign_up_input);
         close_button_action_bar = findViewById(R.id.close_button_action_bar);
         close_button_action_bar.setOnClickListener(this);
-        new_user_sign_up_button = findViewById(R.id.new_user_sign_up_button);
-        new_user_sign_up_button.setOnClickListener(this);
+        existing_user_sign_in_button = findViewById(R.id.existing_user_sign_in_button);
+        existing_user_sign_in_button.setOnClickListener(this);
+        sign_up_button = findViewById(R.id.sign_up_button);
+        sign_up_button.setOnClickListener(this);
         ghure_dekhi_title_text = findViewById(R.id.Ghure_Dekhi_title_text);
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Papaya_Sunrise.otf");
         ghure_dekhi_title_text.setTypeface(typeface);
-        i = new Intent(LoginSignupPage.this, PackageDetails.class);
-        j = new Intent(LoginSignupPage.this, SignUpInput.class);
-    }
-
-    public void onBackPressed() {
-        startActivity(i);
-        finish();
+        i = new Intent(SignUpInput.this, SignUpInputPassword.class);
+        j = new Intent(SignUpInput.this, LoginSignupPage.class);
+        k = new Intent(SignUpInput.this, PackageDetails.class);
     }
 
     @Override
     public void onClick(View v) {
-        switch(v.getId()) {
+        switch (v.getId()) {
             case R.id.close_button_action_bar:
-                startActivity(i);
-
+                startActivity(k);
                 finish();
                 break;
-            case R.id.new_user_sign_up_button:
+            case R.id.existing_user_sign_in_button:
                 startActivity(j);
                 finish();
                 break;
+            case R.id.sign_up_button:
+                startActivity(i);
+                finish();
+                break;
         }
+    }
+
+    public void onBackPressed() {
+        startActivity(j);
+        finish();
     }
 }

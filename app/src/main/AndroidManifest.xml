@@ -9,12 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity" android:theme="@style/SplashTheme">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".PackageDetails"
@@ -22,6 +24,10 @@
         <activity
             android:name=".LoginSignupPage"
             android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".SignUpInput"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".SignUpInputPassword"></activity>
     </application>
 
 </manifest>
